@@ -53,7 +53,7 @@ class _Login extends State<Login> {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   stops: [
-                    0.2,
+                    0.3,
                     0.2,
                     // 0.8,
                   ],

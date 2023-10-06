@@ -23,6 +23,24 @@ class _Otp extends State<Otp> {
     );
   }
 
+  Widget buildOtpTextField() {
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.2,
+      height: MediaQuery.of(context).size.height * 0.1,
+      alignment: Alignment.center,
+      child: TextField(
+        maxLength: 1,
+        textAlign: TextAlign.center,
+        style: TextStyle(fontSize: 24, color: Colors.white),
+        decoration: InputDecoration(
+          counterText: '',
+          enabledBorder: myinputborder(),
+          focusedBorder: myfocusborder(),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -37,6 +55,7 @@ class _Otp extends State<Otp> {
         //     ),
         //   ),
         // ),
+
         body: SingleChildScrollView(
           child: Center(
             child: Container(
@@ -66,45 +85,84 @@ class _Otp extends State<Otp> {
                 //   shape: BoxShape.rectangle,
                 //   color: Colors.blue,
                 // ),
+
                 child: Column(children: [
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                  //container of image
+                  // SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                  // Container(
+                  //   width: MediaQuery.of(context).size.width * 0.3,
+                  //   height: MediaQuery.of(context).size.height * 0.1,
+                  //   alignment: Alignment.center,
+                  //   child: Image(
+                  //     image: AssetImage('assets/image1.jpg'),
+                  //   ),
+                  // ),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.3,
+                    width: MediaQuery.of(context).size.width * 0.9,
                     height: MediaQuery.of(context).size.height * 0.1,
-                    alignment: Alignment.center,
-                    child: Image(
-                      image: AssetImage('assets/image1.jpg'),
+                    alignment: Alignment.topLeft,
+                    child: Row(
+                      children: [
+                        IconButton(
+                          icon: Icon(
+                            Icons.arrow_back,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                        Text(
+                          "Enter verification code",
+                          style: GoogleFonts.alice(
+                              color: Colors.white, fontSize: 20),
+                        ),
+                      ],
                     ),
                   ),
+
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.2,
                   ),
-                  Container(
-                    width: MediaQuery.of(context).size.width * 1.0,
-                    height: MediaQuery.of(context).size.height * 0.1,
-                    alignment: Alignment.center,
-                    // decoration: BoxDecoration(
-                    //   shape: BoxShape.rectangle,
-                    //   color: Colors.red,
-                    // ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        // border: OutlineInputBorder(
-                        //   borderSide: BorderSide(color: Colors.red),
-                        //   borderRadius: BorderRadius.all(Radius.circular(12)),
-                        // ),
-
-                        hintText: 'Enter OTP',
-                        hintStyle: GoogleFonts.abhayaLibre(color: Colors.white),
-                        labelText: "OTP",
-                        labelStyle: GoogleFonts.aBeeZee(
-                          color: Color.fromARGB(255, 216, 125, 7),
-                        ),
-                        enabledBorder: myinputborder(),
-                        focusedBorder: myfocusborder(),
-                      ),
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      buildOtpTextField(),
+                      buildOtpTextField(),
+                      buildOtpTextField(),
+                      buildOtpTextField(),
+                    ],
                   ),
+
+                  // Container(
+                  //   width: MediaQuery.of(context).size.width * 1.0,
+                  //   height: MediaQuery.of(context).size.height * 0.1,
+                  //   alignment: Alignment.center,
+                  //   // decoration: BoxDecoration(
+                  //   //   shape: BoxShape.rectangle,
+                  //   //   color: Colors.red,
+                  //   // ),
+                  //   child: TextField(
+
+                  //     decoration: InputDecoration(
+                  //       // border: OutlineInputBorder(
+                  //       //   borderSide: BorderSide(color: Colors.red),
+                  //       //   borderRadius: BorderRadius.all(Radius.circular(12)),
+                  //       // ),
+
+                  //       hintText: ' * ',
+                  //      counterText: '',
+                  //       hintStyle: GoogleFonts.abhayaLibre(color: Colors.white),
+
+                  //       labelText: "OTP",
+                  //       labelStyle: GoogleFonts.aBeeZee(
+                  //         color: Color.fromARGB(255, 216, 125, 7),
+                  //       ),
+                  //       enabledBorder: myinputborder(),
+                  //       focusedBorder: myfocusborder(),
+                  //     ),
+                  //   ),
+                  // ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.1),
                   Container(
                     // width: MediaQuery.of(context).size.width * 0.3,
