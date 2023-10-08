@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Otp extends StatefulWidget {
@@ -29,6 +30,9 @@ class _Otp extends State<Otp> {
       height: MediaQuery.of(context).size.height * 0.1,
       alignment: Alignment.center,
       child: TextField(
+        keyboardType: TextInputType.number,
+        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+        textInputAction: TextInputAction.next,
         maxLength: 1,
         textAlign: TextAlign.center,
         style: TextStyle(fontSize: 24, color: Colors.white),
@@ -37,6 +41,11 @@ class _Otp extends State<Otp> {
           enabledBorder: myinputborder(),
           focusedBorder: myfocusborder(),
         ),
+        onChanged: (value) {
+          if (value.length == 1) {
+            FocusScope.of(context).nextFocus();
+          }
+        },
       ),
     );
   }
@@ -67,7 +76,7 @@ class _Otp extends State<Otp> {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   stops: [
-                    0.2,
+                    0.3,
                     0.2,
                     // 0.8,
                   ],
@@ -79,8 +88,8 @@ class _Otp extends State<Otp> {
                 ),
               ),
               child: Container(
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: MediaQuery.of(context).size.height * 0.8,
+                width: MediaQuery.of(context).size.width * 0.9,
+                height: MediaQuery.of(context).size.height * 1.0,
                 // decoration: BoxDecoration(
                 //   shape: BoxShape.rectangle,
                 //   color: Colors.blue,
@@ -112,24 +121,36 @@ class _Otp extends State<Otp> {
                             Navigator.pop(context);
                           },
                         ),
+                        SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.1),
                         Text(
                           "Enter verification code",
                           style: GoogleFonts.alice(
-                              color: Colors.white, fontSize: 20),
+                              color: Colors.white, fontSize: 22),
                         ),
                       ],
                     ),
                   ),
 
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.2,
+                    height: MediaQuery.of(context).size.height * 0.3,
                   ),
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       buildOtpTextField(),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.01,
+                      ),
                       buildOtpTextField(),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.01,
+                      ),
                       buildOtpTextField(),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.01,
+                      ),
                       buildOtpTextField(),
                     ],
                   ),
@@ -173,7 +194,9 @@ class _Otp extends State<Otp> {
                     //   color: Colors.purple,
                     // ),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 216, 125, 7),
                         padding:

@@ -60,7 +60,6 @@ class _Login extends State<Login> {
                   colors: [
                     Color.fromARGB(255, 216, 125, 7),
                     Color.fromARGB(255, 14, 13, 17),
-                    // Colors.yellow,
                   ],
                 ),
               ),
@@ -88,6 +87,8 @@ class _Login extends State<Login> {
                     //   color: Colors.red,
                     // ),
                     child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
                         // border: OutlineInputBorder(
                         //   borderSide: BorderSide(color: Colors.red),
