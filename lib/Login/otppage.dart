@@ -1,4 +1,7 @@
+
+import 'package:application/videos/view/video_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -195,7 +198,11 @@ class _Otp extends State<Otp> {
                     // ),
                     child: ElevatedButton(
                       onPressed: () {
-                        
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const video_list()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 216, 125, 7),
