@@ -1,36 +1,28 @@
-class Data{
-  var data = {
-    0:[
-    ' video1',
-      'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-     'Big Buck Bunny',
-     ' images/BigBuckBunny.jpg',
+class Data {
+  var Videolist = {
+    0: [
+      "assets/personimage1.jpg",
+      'Virat',
+      'assets/bunny.jpg',
 
-
-
-
+//         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    
     ],
-    1:[
-      'video2',
-      'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
-      'Elephant Dream',
-      'images/ElephantsDream.jpg',
+    1: [
+      'assets/personimage2.jpg',
+      'John',
+      'assets/Elephants_Dream.jpg',
+//     videoUrl:
+//         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      
     ],
-    
-    2:[
-      'video3',
-      'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-      'For Bigger Blazes',
-      'images/ForBiggerBlazes.jpg',
-
+    2: [
+      'assets/personimage3.jpg',
+      'Rita',
+      'assets/ForBiggerEscapes.jpg',
+//     videoUrl:
+//         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+      
     ],
-
-    
-
-    
-    
-
-
-
   };
 }

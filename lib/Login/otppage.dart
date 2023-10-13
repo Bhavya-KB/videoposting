@@ -1,4 +1,3 @@
-
 import 'package:application/videos/view/video_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -201,7 +200,11 @@ class _Otp extends State<Otp> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const video_list()),
+                              builder: (context) => video_list(
+                                    name: 'name',
+                                    img: 'img',
+                                    videoimg: 'videoimg',
+                                  )),
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -210,7 +213,7 @@ class _Otp extends State<Otp> {
                             EdgeInsets.symmetric(horizontal: 37, vertical: 14),
                       ),
                       child: Text(
-                        "Get Started ",
+                        " Get Started ",
                         style: GoogleFonts.actor(
                           fontSize: 11,
                         ),
